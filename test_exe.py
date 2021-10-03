@@ -9,14 +9,13 @@ from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.common import actions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-import selenium.common.exceptions as Sele_exception 
+import selenium.common.exceptions as Sele_exception
 import csv
 import os
 import time
 import logging
 import openpyxl
 from datetime import datetime
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
@@ -26,7 +25,7 @@ import pytest_html_reporter
 
 # @pytest.mark.usefixtures("setup")
 # exe_dict = {}
-class Test_Selenium_Execution():
+class Test_Selenium_Execution():  
     global exe_list, exe_dict2, credential, logger, fhandler, line_exe
     line_exe = 0
     credential = []
@@ -49,9 +48,6 @@ class Test_Selenium_Execution():
     logger = logging.getLogger()
     fhandler = logging.FileHandler("logfile.log")        
     logger.setLevel(logging.INFO)
-    # logger = logging.getLogger()
-# fhandler = logging.FileHandler("logfile.log")
-# logger.setLevel(logging.INFO)
     filename = ""
     fail_name = ""
     # exe_dict2 = ""  
@@ -118,7 +114,7 @@ class Test_Selenium_Execution():
         if "pywait" in action:
             self.wait_till(int(values))
         elif "expectedwait" in action:
-            WebDriverWait(self.driver, int(values)).until(EC.presence_of_element_located((By.XPATH, element)))
+            element = WebDriverWait(driver, int(values)).until(EC.presence_of_element_located((By.XPATH, element)))
         elif "extendwait" in action:
             self.driver.implicitly_wait(int(values))
     def saveimage(self,element,action,values):
@@ -376,7 +372,7 @@ class Test_Selenium_Execution():
                             exe_log.info(str(code_line[0])+" : "+str(code_line[1])+" : "+str(code_line[2])+" : "+str(code_line[dataset])+" - Line executed ")
                             break_loop = 1
                         except Exception as exc:
-                            exe_log.error("Error occured...Please correct the testscript")
+                            exe_log.warning("Error occured...Please correct the testscript")
                             exe_log.error("Exception Raised : "+str(exc.__class__)+" occured")
                             exe_state = 1
                             self.saveimage("fail_error","fail_error","fail_error")

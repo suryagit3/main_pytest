@@ -1,0 +1,8 @@
+retestbroker@gmail.com,1234,http://164.52.202.186:8083/GINGAFLEETS/Login,1,new,min,logit
+cemtest@gmail.com,1234,http://164.52.209.132:8087/GINGAFLEETSSAAS_TESTING/login,0,old,max,logit
+demotestcement@gmail.com,1234,http://164.52.209.132:8087/GINGAFLEETSSAAS_KSS/login,1,old,max,logit
+cement5@gmail.com,1234,http://164.52.202.186:8098/GINGAFLEETSSAAS_UAT/login,0,old,max,logit
+DemoCementt@gmail.com,1234,http://164.52.202.186:8083/GINGAFLEETS/Login,1,new,max,logit
+suryarishi3@gmail.com,1234,http://164.52.202.186:8075,0,fs,max,logit
+demotestcement@gmail.com,1234,http://101.53.136.118:8090/GINGAFLEETSSAAS_TESTING/login,1,old,max,logit
+Testautomation,1234,http://164.52.202.186:8075,0,fs,max,logit

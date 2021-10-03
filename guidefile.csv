@@ -1,0 +1,28 @@
+executions	detailed usage	user for actions		
+id	Exact id	click	 input pass in actions and input in values	
+pid	partial id 	click	 input pass in actions and input in values	
+css	Css selector	"click, input pass in actions and input in values 
+For assert action you need to pass the label you want to check in values column"	Assert action	Assertion validation Used to check the label message after saving  updating  deleting
+multicss	"Spiliting an element from multi element
+Single click is available for multi locators"	click	 singleclick pass in actions and for singleclick you need to pass the count of the element and input in values	
+xpath	xpath selector	"click, input pass in actions and input in values 
+For assert action you need to pass the label you want to check in values column"	Assert action	Assertion validation Used to check the label message after saving  updating  deleting
+multixpath	"Spiliting an element from multi element
+Single click is available for multi locators"	click	 singleclick pass in actions and for singleclick you need to pass the count of the element and input in values	
+plink	partial link is used to identify the link by partial match	Only click pass in actions		
+link	Exact link is used to identify the link by exact match	Only click pass in actions		
+switchframe	switch frame is used to get the element within the frame	Value – 0 need to pass in values  frame need to pass in element		
+wait	wait is used to wait for the action to be completed on backend until the driver wait	1. Need to pass “exewait” in element column and “pywait” in actions, waiting seconds need to pass in values. 2. If you want to use explicit wait, Need to pass “expectedwait” in actions tab and the xpath of the element need to give in element, waiting seconds in values column. Note:) In explicit wait, element column – you need to pass only the xpath. 3. If you want to extend the waiting time for browser globally, you need to pass “browser” in element column, “extendwait” in actions column, time in seconds on values column. 		
+switchalert	Used to grab the JS popup driver will listen into the js popups.	"Click ok alert
+Click ok and cancel
+Click cancel
+In action need to pass “ok” or “cancel”"		
+switchwindow	Used to traverse the driver from one window to another.	need to pass the tab number value to switch. “Window” keyword need to pass in element		
+js	js used to execute javascript code 	Javascript code to do actions need to be pass in element column		
+refresh	Used to refresh the window of the browser. After executing the one dataset 	Need to pass in execution column as refresh keyword		
+destroywindow	It destroys the current browser tab	“Window” keyword need to pass in element		
+snapshot	It takes a snapshot of the current window tab.	In element you need to pass the “name” of the image file that you want.		
+open 	It opens a URL which was given by you in values section	In element you need to pass the “open” keyword to open the given URL. In values you need to pass the URL link for each dataset if you are using more than 1.		
+movetoclick 	It moves to the unaccessable element and perform click operation	In element you need to pass the xpath of that element only to click.		
+scroll	It scroll until the webdriver find the element it in the page.	In element you need to pass the xpath of that element only.		
+loop	It acts as loops with different set of values. You need to mention the starting line no on excel sheet	In element you need to pass the line no from which you can iterate the lines and in action you need to pass “start”. Need to enter only numbers in element String will not accept		
