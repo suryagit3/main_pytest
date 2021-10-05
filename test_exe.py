@@ -398,6 +398,3 @@ class Test_Selenium_Execution():
             # exe_log.error(type(err).__name__)
             self.enddriver(exe_dict,1)
             raise Sele_exp
-
-
-            
