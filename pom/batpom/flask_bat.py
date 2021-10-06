@@ -12,8 +12,6 @@ def index():
 def run():
     if request.method == "POST":
         return request.form
-    else:
-        return 400,"Method not allowed"
 
 if __name__ == "__main__":
     app.run()
