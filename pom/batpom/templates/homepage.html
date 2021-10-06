@@ -9,7 +9,41 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
-    <script src='main.js'></script>
+    <script>
+    function show(id){
+        var show_ele = id;
+        var cls_ele = $("tr[class*='"+show_ele+"&']");
+        for(var i = 0;i<cls_ele.length;i++){
+        cls_ele[i].style.display = "grid";
+        }
+        }
+        function hide(id){
+        var show_ele = id;
+        var cls_ele = $("tr[class*='"+show_ele+"&']");
+        for(var i = 0;i<cls_ele.length;i++){
+        cls_ele[i].style.display = "none";
+        }
+    }
+        function check_child(value){
+        var show_ele = value;
+                var cls_ele = $("input[value*='"+show_ele+"&']");
+                for(var i = 0;i<cls_ele.length;i++){
+                cls_ele[i].checked = true;
+        }
+        var input_ele = $("input[value='"+value+"']");
+        input_ele[0].setAttribute("onclick","uncheck_child(this.value);");
+        }
+        function uncheck_child(value){
+        var show_ele = value;
+                var cls_ele = $("input[value*='"+show_ele+"&']");
+                for(var i = 0;i<cls_ele.length;i++){
+                cls_ele[i].checked = false;
+        }
+        var input_ele = $("input[value='"+value+"']");
+        input_ele[0].setAttribute("onclick","check_child(this.value);");
+        }
+
+        </script>
 </head>
 <style>
     /* body{
@@ -49,10 +83,10 @@
        {% for parent_node in tree_lists %}      
 		<tr><td><input type="button" value=" + " id="{{parent_node[0]}}" onclick="show(this.id)"/>
             <input type="button" value=" - " id={{parent_node[0]}} onclick="hide(this.id)"/>
-            <input type="checkbox" value={{parent_node[0]}} /> {{parent_node[0]}}</td>
+            <input type="checkbox" value={{parent_node[0]}} onclick="check_child(this.value)"/> {{parent_node[0]}}</td>
             <tbody>
                 {% for child in parent_node[1] %}
-                <tr><td><input type="checkbox" value={{parent_node[0]+"&"+child}} /> {{child}}</td></tr>
+                <tr style="display: none;" class={{parent_node[0]+"&"+child}}><td><input type="checkbox" value={{parent_node[0]+"&"+child}} /> {{child}}</td></tr>
                 {% endfor %}
             </tbody>
         </tr>
