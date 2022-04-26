@@ -13,3 +13,5 @@
 # use git undo last commit using --soft
 
     git reset --soft HEAD
+
+    
