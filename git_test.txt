@@ -12,4 +12,4 @@
 
 # use git undo last commit using --soft
 
-    git reset SOFT~
+    git reset --soft HEAD
