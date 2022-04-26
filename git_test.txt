@@ -1,0 +1,15 @@
+1. Git test
+# use git restore <file path> to undo last staged file
+
+    git restore --staged <file_path_with_file_name>
+
+# use git reset to undo all staged files
+
+    git reset 
+
+# use git undo last commit and delete the last commit
+    git reset HEAD~
+
+# use git undo last commit using --soft
+
+    git reset SOFT~
